@@ -6,7 +6,7 @@
 
     <title>Erica & Raquel | Juntinhas à Noite</title>
 
-    <meta name="description" content="Cardápio online Erica & Raquel. Comida caseira feita com amor e entregue à noite.">
+    <meta name="description" content="Cardápio online Erica & Raquel - comida caseira feita com amor.">
 
     <style>
 
@@ -17,22 +17,28 @@
         }
 
         :root {
-            --vinho: #8f1747;
-            --vinho-escuro: #3b0b20;
-            --rosa: #d94f79;
-            --rosa-claro: #ff8aaa;
-            --dourado: #e7b86a;
-            --creme: #fff5e8;
-            --preto: #160b0f;
-            --cinza: #2b1a20;
+            --vinho: #722d32;
+            --vinho-escuro: #321719;
+            --rosa: #a94f54;
+            --rosa-claro: #e6a08e;
+            --dourado: #c99558;
+            --preto: #191313;
+            --cinza: #322423;
             --branco: #ffffff;
-            --verde: #2e8b57;
+            --verde: #25D366;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Trebuchet MS", Arial, sans-serif;
             background:
-                radial-gradient(circle at top, #4b1429, #160b0f 55%);
+                linear-gradient(rgba(25,19,19,.92), rgba(25,19,19,.96)),
+                repeating-linear-gradient(
+                    0deg,
+                    #3a2925 0,
+                    #3a2925 2px,
+                    #30211f 2px,
+                    #30211f 5px
+                );
             color: var(--branco);
             min-height: 100vh;
         }
@@ -41,43 +47,93 @@
 
         header {
             text-align: center;
-            padding: 35px 20px 25px;
-            background: linear-gradient(
-                180deg,
-                #260b16,
-                #160b0f
-            );
-            border-bottom: 2px solid var(--dourado);
+            padding: 42px 20px 30px;
+            background:
+                linear-gradient(rgba(49,24,22,.9), rgba(31,18,18,.96)),
+                repeating-linear-gradient(
+                    90deg,
+                    #633f2e 0,
+                    #633f2e 1px,
+                    #4b2f27 1px,
+                    #4b2f27 7px
+                );
+            border-bottom: 1px solid rgba(201,149,88,.7);
+            box-shadow: 0 10px 30px rgba(0,0,0,.24);
         }
 
         .logo {
-            width: 115px;
-            height: 115px;
+            width: 142px;
+            height: 142px;
             margin: auto;
             border-radius: 50%;
-            background: linear-gradient(
-                145deg,
-                var(--vinho),
-                #531027
-            );
-            border: 3px solid var(--dourado);
+            position: relative;
+            background:
+                linear-gradient(rgba(114,45,50,.94), rgba(65,27,29,.96)),
+                repeating-linear-gradient(0deg, transparent 0 4px, rgba(255,255,255,.05) 4px 5px);
+            border: 1px solid var(--dourado);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 25px rgba(231,184,106,.25);
+            box-shadow:
+                0 0 0 5px rgba(201,149,88,.12),
+                0 12px 28px rgba(0,0,0,.3);
         }
 
-        .logo span {
-            font-family: Georgia, serif;
-            font-size: 38px;
-            font-weight: bold;
+        .logo::before,
+        .logo::after {
+            content: "";
+            position: absolute;
+            width: 26px;
+            height: 1px;
+            background: var(--dourado);
+            top: 50%;
+        }
+
+        .logo::before {
+            left: 17px;
+        }
+
+        .logo::after {
+            right: 17px;
+        }
+
+        .logo-monograma {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            line-height: 1;
+        }
+
+        .logo-monograma strong {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 40px;
+            font-weight: normal;
+            letter-spacing: 0;
             color: var(--dourado);
         }
 
+        .logo-monograma em {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 20px;
+            color: var(--rosa-claro);
+            font-style: normal;
+        }
+
+        .logo-legenda {
+            margin-top: 10px;
+            color: #f1d7b3;
+            font-size: 8px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
         header h1 {
-            margin-top: 15px;
-            font-family: Georgia, serif;
-            font-size: 34px;
+            margin-top: 20px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 32px;
+            font-weight: normal;
+            letter-spacing: .5px;
             color: var(--dourado);
         }
 
@@ -87,16 +143,16 @@
 
         .slogan {
             margin-top: 8px;
-            color: #f8d8df;
+            color: #e8d4c1;
             font-size: 15px;
         }
 
         .whatsapp-top {
             display: inline-block;
             margin-top: 18px;
-            padding: 11px 20px;
+            padding: 12px 22px;
             border-radius: 30px;
-            background: #25D366;
+            background: var(--verde);
             color: white;
             text-decoration: none;
             font-weight: bold;
@@ -239,6 +295,28 @@
             background: #b93660;
         }
 
+        .campo-marmita {
+            margin-top: 15px;
+        }
+
+        .campo-marmita label {
+            display: block;
+            margin-bottom: 6px;
+            color: #e9d5db;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .campo-marmita select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #653047;
+            border-radius: 10px;
+            background: #170c10;
+            color: white;
+            outline: none;
+        }
+
         /* BEBIDAS */
 
         .bebidas-grid {
@@ -320,8 +398,8 @@
             position: fixed;
             right: 18px;
             bottom: 18px;
-            width: 58px;
-            height: 58px;
+            width: 60px;
+            height: 60px;
             border: none;
             border-radius: 50%;
             background: var(--rosa);
@@ -338,8 +416,8 @@
             right: -3px;
             background: var(--dourado);
             color: #321;
-            width: 22px;
-            height: 22px;
+            width: 23px;
+            height: 23px;
             border-radius: 50%;
             font-size: 12px;
             display: flex;
@@ -354,7 +432,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,.75);
+            background: rgba(0,0,0,.78);
             z-index: 2000;
             padding: 20px;
             align-items: flex-end;
@@ -408,12 +486,16 @@
             color: var(--rosa-claro);
         }
 
+        .item-carrinho small {
+            color: #d8c1c8;
+        }
+
         .remover {
             border: none;
             background: #721b37;
             color: white;
             border-radius: 8px;
-            padding: 5px 9px;
+            padding: 7px 10px;
             cursor: pointer;
         }
 
@@ -438,7 +520,8 @@
         }
 
         .campo input,
-        .campo textarea {
+        .campo textarea,
+        .campo select {
             width: 100%;
             padding: 13px;
             border: 1px solid #653047;
@@ -453,12 +536,23 @@
             min-height: 70px;
         }
 
+        .aviso {
+            background: #47202d;
+            border: 1px solid #713049;
+            border-radius: 10px;
+            padding: 12px;
+            margin-bottom: 15px;
+            color: #f4dce3;
+            font-size: 13px;
+            text-align: center;
+        }
+
         .btn-whatsapp {
             width: 100%;
             border: none;
             padding: 15px;
             border-radius: 12px;
-            background: #25D366;
+            background: var(--verde);
             color: white;
             font-size: 17px;
             font-weight: bold;
@@ -506,7 +600,12 @@
 <header>
 
     <div class="logo">
-        <span>ER</span>
+        <div class="logo-monograma" aria-label="Erica e Raquel">
+            <strong>E</strong>
+            <em>&amp;</em>
+            <strong>R</strong>
+        </div>
+        <span class="logo-legenda">COMIDA CASEIRA</span>
     </div>
 
     <h1>
@@ -517,10 +616,9 @@
         Juntinhas à noite, levando o melhor sabor  para você! ❤️
     </p>
 
-    <!-- TROQUE O NÚMERO AQUI -->
     <a
         class="whatsapp-top"
-        href="https://wa.me/+55 14 99670-5128"
+        href="https://wa.me/5514996705128"
         target="_blank">
         💬 Falar pelo WhatsApp
     </a>
@@ -604,7 +702,7 @@
                     R$ 5,00
                 </strong>
 
-                <button onclick="adicionar('Refrigerante Lata 350ml', 5)">
+                <button onclick="escolherRefriLata()">
                     + Adicionar
                 </button>
 
@@ -615,7 +713,7 @@
 
                 <div class="bebida-icone">🥤</div>
 
-                <h3>Refrigerante 2L</h3>
+                <h3>Refrigerante 2 Litros</h3>
 
                 <p>
                     Coca-Cola, Guaraná, Fanta ou Sprite
@@ -625,7 +723,7 @@
                     R$ 12,00
                 </strong>
 
-                <button onclick="adicionar('Refrigerante 2 Litros', 12)">
+                <button onclick="escolherRefri2L()">
                     + Adicionar
                 </button>
 
@@ -735,6 +833,11 @@
         </div>
 
 
+        <div class="aviso">
+            Confira seu pedido antes de enviar.
+            O pedido será enviado diretamente pelo WhatsApp.
+        </div>
+
         <div id="lista-carrinho">
 
             <p class="vazio">
@@ -760,7 +863,7 @@
         <div class="campo">
 
             <label>
-                Seu nome
+                Seu nome *
             </label>
 
             <input
@@ -774,12 +877,28 @@
         <div class="campo">
 
             <label>
-                Endereço para entrega
+                Endereço para entrega *
             </label>
 
             <textarea
                 id="endereco"
                 placeholder="Rua, número, bairro..."></textarea>
+
+        </div>
+
+
+        <div class="campo">
+
+            <label>
+                Forma de pagamento
+            </label>
+
+            <select id="pagamento">
+                <option value="">Selecione uma opção</option>
+                <option value="Pix">Pix</option>
+                <option value="Dinheiro">Dinheiro</option>
+                <option value="Cartão">Cartão</option>
+            </select>
 
         </div>
 
@@ -816,8 +935,7 @@
        CONFIGURAÇÕES
     ========================== */
 
-    // TROQUE PELO WHATSAPP REAL
-    const whatsapp = "5513999999999";
+    const whatsapp = "5514996705128";
 
 
     /* ==========================
@@ -929,6 +1047,13 @@
     let carrinho = [];
 
 
+    const precosMarmita = {
+        P: 22,
+        M: 24,
+        G: 28
+    };
+
+
     function adicionar(nome, preco) {
 
         carrinho.push({
@@ -948,6 +1073,15 @@
         carrinho.splice(index, 1);
 
         atualizarCarrinho();
+
+    }
+
+
+    function formatarPreco(valor) {
+
+        return Number(valor)
+            .toFixed(2)
+            .replace(".", ",");
 
     }
 
@@ -1006,8 +1140,9 @@
 
                     <br>
 
-                    R$
-                    ${item.preco.toFixed(2).replace(".", ",")}
+                    <small>
+                        R$ ${formatarPreco(item.preco)}
+                    </small>
 
                 </div>
 
@@ -1030,7 +1165,7 @@
 
         totalElemento.innerText =
             "R$ " +
-            total.toFixed(2).replace(".", ",");
+            formatarPreco(total);
 
     }
 
@@ -1096,22 +1231,39 @@
                     </div>
 
 
-                    <div class="preco">
+                    <div class="preco" id="preco-${dia}">
 
                         R$
-                        ${dados.preco
-                            .toFixed(2)
-                            .replace(".", ",")}
+                        ${formatarPreco(precosMarmita.M)}
+
+                    </div>
+
+
+                    <div class="campo-marmita">
+
+                        <label for="tamanho-${dia}">
+                            Tamanho da marmita
+                        </label>
+
+                        <select
+                            id="tamanho-${dia}"
+                            class="tamanho-marmita"
+                            onchange="atualizarPrecoMarmita(this, '${dia}')">
+                            <option value="P">P - R$ 22,00</option>
+                            <option value="M" selected>M - R$ 24,00</option>
+                            <option value="G">G - R$ 28,00</option>
+                        </select>
 
                     </div>
 
 
                     <button
                         class="btn-adicionar"
-                        onclick="adicionar(
+                        onclick="adicionarMarmita(
                             '${dados.dia} - ${dados.prato}',
-                            ${dados.preco}
-                        )">
+                            this
+                        )"
+                        type="button">
 
                         🛒 Adicionar ao pedido
 
@@ -1123,6 +1275,70 @@
 
         `;
 
+    }
+
+
+    function adicionarMarmita(nome, botao) {
+
+        const tamanho =
+            botao
+                .closest(".prato-conteudo")
+                .querySelector(".tamanho-marmita")
+                .value;
+
+        adicionar(
+            `${nome} - Marmita ${tamanho}`,
+            precosMarmita[tamanho]
+        );
+
+    }
+
+
+    function atualizarPrecoMarmita(select, dia) {
+
+        document
+            .getElementById(`preco-${dia}`)
+            .innerText =
+                `R$ ${formatarPreco(precosMarmita[select.value])}`;
+
+    }
+
+
+    function escolherSaborRefrigerante(tamanho, preco) {
+
+        const sabor = prompt(
+            "Qual refrigerante você deseja?\n\n" +
+            "Digite:\n" +
+            "1 - Coca-Cola\n" +
+            "2 - Guaraná\n" +
+            "3 - Fanta\n" +
+            "4 - Sprite"
+        );
+
+        const sabores = {
+            "1": "Coca-Cola",
+            "2": "Guaraná",
+            "3": "Fanta",
+            "4": "Sprite"
+        };
+
+        if (!sabores[sabor]) {
+            alert("Escolha uma opção válida.");
+            return;
+        }
+
+        adicionar(`Refrigerante ${sabores[sabor]} - ${tamanho}`, preco);
+
+    }
+
+
+    function escolherRefriLata() {
+        escolherSaborRefrigerante("Lata 350ml", 5);
+    }
+
+
+    function escolherRefri2L() {
+        escolherSaborRefrigerante("2 Litros", 12);
     }
 
 
@@ -1173,6 +1389,10 @@
             document.getElementById("endereco").value.trim();
 
 
+        const pagamento =
+            document.getElementById("pagamento").value;
+
+
         const observacao =
             document.getElementById("observacao").value.trim();
 
@@ -1199,30 +1419,47 @@
         }
 
 
+        if (!pagamento) {
+
+            alert(
+                "Escolha a forma de pagamento: Pix, Dinheiro ou Cartão."
+            );
+
+            document
+                .getElementById("pagamento")
+                .focus();
+
+            return;
+
+        }
+
+
         let total = 0;
 
 
         let mensagem =
-            "🍽️ *NOVO PEDIDO - ERICA & RAQUEL*%0A";
+            "🍽️ *NOVO PEDIDO - ERICA & RAQUEL*\n\n";
 
         mensagem +=
-            "━━━━━━━━━━━━━━━━━━━━%0A%0A";
-
-
-        mensagem +=
-            "👤 *Nome:* " +
-            encodeURIComponent(nome) +
-            "%0A";
+            "👤 *Cliente:* " +
+            nome +
+            "\n";
 
 
         mensagem +=
             "📍 *Endereço:* " +
-            encodeURIComponent(endereco) +
-            "%0A%0A";
+            endereco +
+            "\n";
 
 
         mensagem +=
-            "🛒 *PEDIDO:*%0A";
+            "💳 *Pagamento:* " +
+            pagamento +
+            "\n\n";
+
+
+        mensagem +=
+            "🛒 *PEDIDO:*\n";
 
 
         carrinho.forEach((item, index) => {
@@ -1232,37 +1469,39 @@
 
             mensagem +=
                 `${index + 1}. ` +
-                encodeURIComponent(item.nome) +
-                " — R$ " +
-                item.preco
-                    .toFixed(2)
-                    .replace(".", ",") +
-                "%0A";
+                `${item.nome} - R$ ` +
+                formatarPreco(item.preco) +
+                "\n";
 
         });
 
 
         mensagem +=
-            "%0A💰 *TOTAL: R$ " +
-            total.toFixed(2).replace(".", ",") +
-            "*%0A";
+            "\n💰 *TOTAL: R$ " +
+            formatarPreco(total) +
+            "*\n";
 
 
         if (observacao) {
 
             mensagem +=
-                "%0A📝 *Observação:* " +
-                encodeURIComponent(observacao);
+                "\n📝 *Observação:*\n" +
+                observacao +
+                "\n";
 
         }
 
 
         mensagem +=
-            "%0A%0A❤️ Obrigado pelo pedido!";
+            "\n❤️ Pedido realizado pelo cardápio online.";
+
+
+        const mensagemCodificada =
+            encodeURIComponent(mensagem);
 
 
         const url =
-            `https://wa.me/${whatsapp}?text=${mensagem}`;
+            `https://wa.me/${whatsapp}?text=${mensagemCodificada}`;
 
 
         window.open(
