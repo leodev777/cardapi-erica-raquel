@@ -1438,28 +1438,28 @@
 
 
         let mensagem =
-            "🍽️ *NOVO PEDIDO - ERICA & RAQUEL*\n\n";
+            "\u{1F37D}\uFE0F *NOVO PEDIDO - ERICA & RAQUEL*\n\n";
 
         mensagem +=
-            "👤 *Cliente:* " +
+            "\u{1F464} *Cliente:* " +
             nome +
             "\n";
 
 
         mensagem +=
-            "📍 *Endereço:* " +
+            "\u{1F4CD} *Endereço:* " +
             endereco +
             "\n";
 
 
         mensagem +=
-            "💳 *Pagamento:* " +
+            "\u{1F4B3} *Pagamento:* " +
             pagamento +
             "\n\n";
 
 
         mensagem +=
-            "🛒 *PEDIDO:*\n";
+            "\u{1F6D2} *PEDIDO:*\n";
 
 
         carrinho.forEach((item, index) => {
@@ -1477,7 +1477,7 @@
 
 
         mensagem +=
-            "\n💰 *TOTAL: R$ " +
+            "\n\u{1F4B0} *TOTAL: R$ " +
             formatarPreco(total) +
             "*\n";
 
@@ -1485,7 +1485,7 @@
         if (observacao) {
 
             mensagem +=
-                "\n📝 *Observação:*\n" +
+                "\n\u{1F4DD} *Observação:*\n" +
                 observacao +
                 "\n";
 
@@ -1493,7 +1493,7 @@
 
 
         mensagem +=
-            "\n❤️ Pedido realizado pelo cardápio online.";
+            "\n\u{2764}\uFE0F Pedido realizado pelo cardápio online.";
 
 
         const mensagemCodificada =
