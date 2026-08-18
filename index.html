@@ -1437,29 +1437,46 @@
         let total = 0;
 
 
+        const emojis = {
+            prato: String.fromCodePoint(0x1F37D, 0xFE0F),
+            cliente: String.fromCodePoint(0x1F464),
+            endereco: String.fromCodePoint(0x1F4CD),
+            pagamento: String.fromCodePoint(0x1F4B3),
+            pedido: String.fromCodePoint(0x1F6D2),
+            total: String.fromCodePoint(0x1F4B0),
+            observacao: String.fromCodePoint(0x1F4DD),
+            coracao: String.fromCodePoint(0x2764, 0xFE0F)
+        };
+
+
         let mensagem =
-            "\u{1F37D}\uFE0F *NOVO PEDIDO - ERICA & RAQUEL*\n\n";
+            emojis.prato +
+            " *NOVO PEDIDO - ERICA & RAQUEL*\n\n";
 
         mensagem +=
-            "\u{1F464} *Cliente:* " +
+            emojis.cliente +
+            " *Cliente:* " +
             nome +
             "\n";
 
 
         mensagem +=
-            "\u{1F4CD} *Endereço:* " +
+            emojis.endereco +
+            " *Endereço:* " +
             endereco +
             "\n";
 
 
         mensagem +=
-            "\u{1F4B3} *Pagamento:* " +
+            emojis.pagamento +
+            " *Pagamento:* " +
             pagamento +
             "\n\n";
 
 
         mensagem +=
-            "\u{1F6D2} *PEDIDO:*\n";
+            emojis.pedido +
+            " *PEDIDO:*\n";
 
 
         carrinho.forEach((item, index) => {
@@ -1477,7 +1494,9 @@
 
 
         mensagem +=
-            "\n\u{1F4B0} *TOTAL: R$ " +
+            "\n" +
+            emojis.total +
+            " *TOTAL: R$ " +
             formatarPreco(total) +
             "*\n";
 
@@ -1485,7 +1504,9 @@
         if (observacao) {
 
             mensagem +=
-                "\n\u{1F4DD} *Observação:*\n" +
+                "\n" +
+                emojis.observacao +
+                " *Observação:*\n" +
                 observacao +
                 "\n";
 
@@ -1493,21 +1514,23 @@
 
 
         mensagem +=
-            "\n\u{2764}\uFE0F Pedido realizado pelo cardápio online.";
+            "\n" +
+            emojis.coracao +
+            " Pedido realizado pelo cardápio online.";
 
 
-        const mensagemCodificada =
-            encodeURIComponent(mensagem);
+        const parametros =
+            new URLSearchParams({
+                text: mensagem
+            });
 
 
         const url =
-            `https://wa.me/${whatsapp}?text=${mensagemCodificada}`;
+            `https://wa.me/${whatsapp}?${parametros.toString()}`;
 
 
-        window.open(
-            url,
-            "_blank"
-        );
+        window.location.href =
+            url;
 
     }
 
