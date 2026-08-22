@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Erica & Raquel | Juntinhas à Noite</title>
+    <title>Navarro Marmitaria | Sabor caseiro</title>
 
-    <meta name="description" content="Cardápio online Erica & Raquel - comida caseira feita com amor.">
+    <meta name="description" content="Cardápio online da Navarro Marmitaria - comida caseira preparada com qualidade.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
 
@@ -17,28 +21,22 @@
         }
 
         :root {
+            --fonte-corpo: "Montserrat", sans-serif;
+            --fonte-titulo: "Playfair Display", Georgia, serif;
             --vinho: #722d32;
             --vinho-escuro: #321719;
             --rosa: #a94f54;
             --rosa-claro: #e6a08e;
             --dourado: #c99558;
-            --preto: #191313;
+            --preto: #121212;
             --cinza: #322423;
             --branco: #ffffff;
-            --verde: #25D366;
+            --bronze: #C5A880;
         }
 
         body {
-            font-family: "Trebuchet MS", Arial, sans-serif;
-            background:
-                linear-gradient(rgba(25,19,19,.92), rgba(25,19,19,.96)),
-                repeating-linear-gradient(
-                    0deg,
-                    #3a2925 0,
-                    #3a2925 2px,
-                    #30211f 2px,
-                    #30211f 5px
-                );
+            font-family: var(--fonte-corpo);
+            background: var(--preto);
             color: var(--branco);
             min-height: 100vh;
         }
@@ -48,15 +46,7 @@
         header {
             text-align: center;
             padding: 42px 20px 30px;
-            background:
-                linear-gradient(rgba(49,24,22,.9), rgba(31,18,18,.96)),
-                repeating-linear-gradient(
-                    90deg,
-                    #633f2e 0,
-                    #633f2e 1px,
-                    #4b2f27 1px,
-                    #4b2f27 7px
-                );
+            background: #181818;
             border-bottom: 1px solid rgba(201,149,88,.7);
             box-shadow: 0 10px 30px rgba(0,0,0,.24);
         }
@@ -106,15 +96,15 @@
         }
 
         .logo-monograma strong {
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: var(--fonte-titulo);
             font-size: 40px;
-            font-weight: normal;
+            font-weight: 600;
             letter-spacing: 0;
             color: var(--dourado);
         }
 
         .logo-monograma em {
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: var(--fonte-titulo);
             font-size: 20px;
             color: var(--rosa-claro);
             font-style: normal;
@@ -130,9 +120,9 @@
 
         header h1 {
             margin-top: 20px;
-            font-family: Georgia, "Times New Roman", serif;
+            font-family: var(--fonte-titulo);
             font-size: 32px;
-            font-weight: normal;
+            font-weight: 600;
             letter-spacing: .5px;
             color: var(--dourado);
         }
@@ -151,11 +141,17 @@
             display: inline-block;
             margin-top: 18px;
             padding: 12px 22px;
-            border-radius: 30px;
-            background: var(--verde);
-            color: white;
+            border-radius: 6px;
+            background: var(--bronze);
+            color: #121212;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: background-color .3s ease, color .3s ease, transform .3s ease;
+        }
+
+        .whatsapp-top:hover {
+            background: #b39770;
+            transform: translateY(-1px);
         }
 
         /* CONTAINER */
@@ -173,9 +169,10 @@
         }
 
         .titulo-secao h2 {
-            font-family: Georgia, serif;
+            font-family: var(--fonte-titulo);
             color: var(--dourado);
             font-size: 27px;
+            font-weight: 600;
         }
 
         .titulo-secao p {
@@ -186,7 +183,7 @@
         /* DIAS */
 
         .dias {
-            display: flex;
+            display: none;
             gap: 8px;
             overflow-x: auto;
             padding: 5px 0 15px;
@@ -222,10 +219,30 @@
                 #211116
             );
             border: 1px solid #713049;
-            border-radius: 20px;
-            overflow: hidden;
+            border-radius: 16px;
+            padding: 12px;
             margin-bottom: 30px;
             box-shadow: 0 10px 30px rgba(0,0,0,.25);
+        }
+
+        .prato-dia.oculto {
+            display: none;
+        }
+
+        .aviso-fechado {
+            display: none;
+            background: #47202d;
+            border: 1px solid var(--dourado);
+            border-radius: 12px;
+            padding: 22px;
+            margin-bottom: 30px;
+            color: #f4dce3;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .aviso-fechado.visivel {
+            display: block;
         }
 
         .prato-imagem {
@@ -237,10 +254,12 @@
                 ),
                 url("https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80")
                 center/cover;
+            border-radius: 12px;
+            box-shadow: 0 1px 2px rgba(0,0,0,.14);
         }
 
         .prato-conteudo {
-            padding: 20px;
+            padding: 28px;
         }
 
         .dia-titulo {
@@ -252,9 +271,10 @@
 
         .prato-conteudo h3 {
             margin: 5px 0 10px;
-            font-family: Georgia, serif;
+            font-family: var(--fonte-titulo);
             color: var(--dourado);
             font-size: 25px;
+            font-weight: 600;
         }
 
         .ingredientes {
@@ -341,6 +361,7 @@
         .bebida h3 {
             color: white;
             font-size: 17px;
+            font-weight: 600;
         }
 
         .bebida p {
@@ -383,8 +404,9 @@
 
         .sobre h2 {
             color: var(--dourado);
-            font-family: Georgia, serif;
+            font-family: var(--fonte-titulo);
             margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .sobre p {
@@ -463,7 +485,8 @@
 
         .modal-topo h2 {
             color: var(--dourado);
-            font-family: Georgia, serif;
+            font-family: var(--fonte-titulo);
+            font-weight: 600;
         }
 
         .fechar {
@@ -551,12 +574,18 @@
             width: 100%;
             border: none;
             padding: 15px;
-            border-radius: 12px;
-            background: var(--verde);
-            color: white;
+            border-radius: 6px;
+            background: var(--bronze);
+            color: #121212;
             font-size: 17px;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
+            transition: background-color .3s ease, color .3s ease, transform .3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background: #b39770;
+            transform: translateY(-1px);
         }
 
         .vazio {
@@ -572,6 +601,7 @@
             .prato-dia {
                 display: grid;
                 grid-template-columns: 42% 58%;
+                gap: 24px;
             }
 
             .prato-imagem {
@@ -600,20 +630,20 @@
 <header>
 
     <div class="logo">
-        <div class="logo-monograma" aria-label="Erica e Raquel">
-            <strong>E</strong>
-            <em>&amp;</em>
-            <strong>R</strong>
+        <div class="logo-monograma" aria-label="Navarro Marmitaria">
+            <strong>N</strong>
+            <em>•</em>
+            <strong>M</strong>
         </div>
         <span class="logo-legenda">COMIDA CASEIRA</span>
     </div>
 
     <h1>
-        Erica <span>&</span> Raquel
+        Navarro <span>Marmitaria</span>
     </h1>
 
     <p class="slogan">
-        Juntinhas à noite, levando o melhor sabor  para você! ❤️
+        Comida caseira, ingredientes selecionados e sabor que acolhe.
     </p>
 
     <a
@@ -632,10 +662,10 @@
 
         <div class="titulo-secao">
 
-            <h2>🍽️ Cardápio da Semana</h2>
+            <h2>🍽️ Cardápio de hoje</h2>
 
             <p>
-                Escolha o dia e faça seu pedido
+                Confira a opção disponível para o dia atual
             </p>
 
         </div>
@@ -667,6 +697,11 @@
 
 
         <div id="prato-container"></div>
+
+        <div class="aviso-fechado" id="aviso-fechado" role="status">
+            <strong>A Navarro Marmitaria está fechada hoje.</strong><br>
+            Nosso atendimento retorna na segunda-feira. Agradecemos a compreensão.
+        </div>
 
     </section>
 
@@ -785,15 +820,15 @@
         </h2>
 
         <p>
-            Na cozinha da Erica & Raquel, cada prato é preparado
-            com carinho, ingredientes selecionados e aquele
-            gostinho de comida caseira.
+            Na Navarro Marmitaria, cada prato é preparado
+            com cuidado, ingredientes selecionados e o sabor
+            autêntico da comida caseira.
         </p>
 
         <br>
 
         <p>
-            🌙 Atendimento e entregas no período da noite.
+            Atendimento e entregas no período da noite.
         </p>
 
     </section>
@@ -1174,40 +1209,22 @@
        MOSTRAR DIA
     ========================== */
 
-    function mostrarDia(dia, botao) {
-
-        const dados = cardapio[dia];
-
+    function renderizarCardapio() {
         const container =
             document.getElementById("prato-container");
 
+        let pratosHTML = "";
 
-        document
-            .querySelectorAll(".dia-btn")
-            .forEach(btn => {
+        Object.entries(cardapio).forEach(([dia, dados]) => {
+            let ingredientesHTML = "";
 
-                btn.classList.remove("ativo");
-
+            dados.ingredientes.forEach(item => {
+                ingredientesHTML += `<span>${item}</span>`;
             });
 
+            pratosHTML += `
 
-        botao.classList.add("ativo");
-
-
-        let ingredientesHTML = "";
-
-
-        dados.ingredientes.forEach(item => {
-
-            ingredientesHTML +=
-                `<span>${item}</span>`;
-
-        });
-
-
-        container.innerHTML = `
-
-            <article class="prato-dia">
+            <article class="prato-dia oculto" id="bloco-${dia}" data-dia="${dia}">
 
                 <div class="prato-imagem"></div>
 
@@ -1273,7 +1290,10 @@
 
             </article>
 
-        `;
+            `;
+        });
+
+        container.innerHTML = pratosHTML;
 
     }
 
@@ -1438,20 +1458,20 @@
 
 
         const emojis = {
-            prato: String.fromCodePoint(0x1F37D, 0xFE0F),
-            cliente: String.fromCodePoint(0x1F464),
-            endereco: String.fromCodePoint(0x1F4CD),
-            pagamento: String.fromCodePoint(0x1F4B3),
-            pedido: String.fromCodePoint(0x1F6D2),
-            total: String.fromCodePoint(0x1F4B0),
-            observacao: String.fromCodePoint(0x1F4DD),
-            coracao: String.fromCodePoint(0x2764, 0xFE0F)
+            prato: "🍽️",
+            cliente: "👤",
+            endereco: "📍",
+            pagamento: "💳",
+            pedido: "🛒",
+            total: "💰",
+            observacao: "📝",
+            coracao: "❤️"
         };
 
 
         let mensagem =
             emojis.prato +
-            " *NOVO PEDIDO - ERICA & RAQUEL*\n\n";
+            " *NOVO PEDIDO - NAVARRO MARMITARIA*\n\n";
 
         mensagem +=
             emojis.cliente +
@@ -1519,14 +1539,8 @@
             " Pedido realizado pelo cardápio online.";
 
 
-        const parametros =
-            new URLSearchParams({
-                text: mensagem
-            });
-
-
         const url =
-            `https://wa.me/${whatsapp}?${parametros.toString()}`;
+            `https://api.whatsapp.com/send?phone=${whatsapp}&text=${encodeURIComponent(mensagem)}`;
 
 
         window.location.href =
@@ -1539,10 +1553,40 @@
        INICIALIZAÇÃO
     ========================== */
 
-    mostrarDia(
-        "segunda",
-        document.querySelector(".dia-btn")
-    );
+    function atualizarCardapioDoDia() {
+        const diaAtual = new Date().getDay();
+
+        const diasDaSemana = [
+            null,
+            "bloco-segunda",
+            "bloco-terca",
+            "bloco-quarta",
+            "bloco-quinta",
+            "bloco-sexta",
+            null
+        ];
+
+        const avisoFechado = document.getElementById("aviso-fechado");
+
+        Object.values(diasDaSemana).forEach(idDoBloco => {
+            if (!idDoBloco) return;
+
+            const elemento = document.getElementById(idDoBloco);
+            if (elemento) elemento.style.display = "none";
+        });
+
+        avisoFechado.style.display = "none";
+
+        if (diaAtual >= 1 && diaAtual <= 5) {
+            const blocoDeHoje = document.getElementById(diasDaSemana[diaAtual]);
+            if (blocoDeHoje) blocoDeHoje.style.display = "block";
+        } else {
+            avisoFechado.style.display = "block";
+        }
+    }
+
+    renderizarCardapio();
+    window.onload = atualizarCardapioDoDia;
 
 
 </script>
